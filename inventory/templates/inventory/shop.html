@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="/inventory/static/css/styles.css">
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 {% for message in messages %}
     <p style="color: red;">{{ message }}</p>

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Item</title>
+    {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
 </head>
 <body>
     <h1>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Item</h1>

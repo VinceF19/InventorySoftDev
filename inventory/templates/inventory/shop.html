@@ -1,7 +1,10 @@
 {% for message in messages %}
     <p style="color: red;">{{ message }}</p>
 {% endfor %}
+
 <h1>Shop</h1>
+    <a href="{% url 'item_list' %}">Add New Item</a>
+
 {% if error %}
 <p style="color: red;">{{ error }}</p>
 {% endif %}

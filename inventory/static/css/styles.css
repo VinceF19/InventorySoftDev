@@ -1,123 +1,212 @@
-/* General styles */
 body {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background: linear-gradient(120deg, #f4f4f9, #e3e6f5);
     color: #333;
+    overflow-x: hidden;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+}
+
+.center-container h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.center-container p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.center-container a.btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #0056b3, #00aaff);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.center-container a.btn:hover {
+    background: linear-gradient(90deg, #004091, #0088cc);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-    font-size: 2.5rem;
-    color: #222;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    text-transform: capitalize;
+    font-size: 3rem;
+    color: #333;
+    font-weight: bold;
+    background: linear-gradient(90deg, #0056b3, #00aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
     text-align: center;
+    text-transform: capitalize;
 }
 
 p {
-    margin: 1rem 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #555;
-    text-align: center;
+    margin: 0.5rem 0;
 }
 
 a {
-    color: #0056b3;
+    color: #00aaff;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
 }
 
 a:hover {
-    color: #003d80;
-    text-decoration: underline;
-    text-align: center;
+    color: #0056b3;
+    border-color: #0056b3;
 }
 
-/* Layout */
+p {
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 1rem;
 }
 
-/* Table styles */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0;
+    margin: 2rem 0;
     background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    padding: 16px;
     text-align: left;
+    font-size: 1rem;
 }
 
 th {
-    background-color: #0056b3;
-    font-weight: bold;
-    text-transform: uppercase;
+    background: linear-gradient(90deg, #0056b3, #00aaff);
     color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+tbody tr {
+    transition: all 0.3s ease;
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    background: #f9f9f9;
 }
 
 tbody tr:hover {
-    background-color: #f1f1f1;
+    background: #f1f1f1;
+    transform: scale(1.02);
 }
 
-/* Buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 button, .btn {
-    background-color: #0056b3;
+    background: linear-gradient(90deg, #0056b3, #00aaff);
     color: #fff;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
     text-transform: uppercase;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
 }
 
 button:hover, .btn:hover {
-    background-color: #003d80;
+    background: linear-gradient(90deg, #004091, #0088cc);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Forms */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
 form {
-    margin: 1rem 0;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 input, select {
     width: 90%;
-    max-width: 300px;
-    padding: 10px;
-    margin: 0.5rem 0;
-    border: 1px solid #ddd;
+    max-width: 400px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-/* Footer */
+input:focus, select:focus {
+    border-color: #00aaff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
 .footer {
-    background-color: #222;
+    background: linear-gradient(90deg, #0056b3, #00aaff);
     color: #fff;
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 1.5rem;
+    margin-top: 3rem;
 }
 
 .footer a {
@@ -128,10 +217,9 @@ input, select {
     color: #fff;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     table, th, td {
@@ -140,6 +228,6 @@ input, select {
 
     button, .btn {
         font-size: 0.9rem;
-        padding: 8px 12px;
+        padding: 10px 15px;
     }
 }

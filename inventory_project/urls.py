@@ -11,6 +11,7 @@ urlpatterns = [
     path('item/add/', views.item_add, name='item_add'),
     path('item/<int:pk>/edit/', views.item_edit, name='item_edit'),
     path('', views.home, name='home'),
+    path('inventory-report/', views.inventory_report, name='inventory_report'),
 ]
 
 def home(request):

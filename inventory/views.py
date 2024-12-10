@@ -2,7 +2,25 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Item
 from .forms import ItemForm
+from django.template.loader import get_template
+from xhtml2pdf import pisa
+from django.http import HttpResponse
 
+def render_to_pdf(template_src, context_dict):
+    template = get_template(template_src)
+    html = template.render(context_dict)
+    response = HttpResponse(content_type='application/pdf')
+    pisa_status = pisa.CreatePDF(html, dest=response)
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+def inventory_report(request):
+    items = Item.objects.all()
+    context = {
+        'items': items,
+    }
+    return render_to_pdf('inventory/inventory_report.html', context)
 
 def shop(request):
     items = Item.objects.all()

@@ -209,10 +209,6 @@ input:focus, select:focus {
     margin-top: 3rem;
 }
 
-.footer a {
-    color: #ffd700;
-}
-
 .footer a:hover {
     color: #fff;
 }

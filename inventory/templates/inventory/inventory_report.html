@@ -36,7 +36,7 @@
                 <td>{{ item.name }}</td>
                 <td>{{ item.description }}</td>
                 <td>{{ item.price }}</td>
-                <td>{{ item.quantity|default:"N/A" }}</td>
+                <td>{{ item.quantity_in_stock|default:"N/A" }}</td>
             </tr>
             {% endfor %}
         </tbody>
